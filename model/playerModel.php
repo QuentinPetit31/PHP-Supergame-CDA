@@ -10,8 +10,8 @@ class ModelPlayer implements InterfaceModel {
         try {
             $this->bdd = new PDO("mysql:host=localhost;dbname=supergame; port=3306", "root", "root"); 
             $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } catch (PDOException $e) {
-            die("Erreur de connexion : " . $e->getMessage());
+        } catch (PDOException $exception) {
+            die("Erreur de connexion : " . $exception->getMessage());
         }
     }
 

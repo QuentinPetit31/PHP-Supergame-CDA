@@ -1,5 +1,8 @@
 <?php
 //LA CLASSE ABSTRAITE AbstractController.php
+require_once __DIR__ . '/../views/ViewHeader.php';
+require_once __DIR__ . '/../views/ViewFooter.php';
+
 
 abstract class AbstractController {
     public ViewHeader $header;
