@@ -1,7 +1,7 @@
 <?php
 //LA CLASSE ABSTRAITE AbstractController.php
-require_once __DIR__ . '/../views/ViewHeader.php';
-require_once __DIR__ . '/../views/ViewFooter.php';
+require_once __DIR__ . '/../view/viewHeader.php';
+require_once __DIR__ . '/../view/viewFooter.php';
 
 
 abstract class AbstractController {
