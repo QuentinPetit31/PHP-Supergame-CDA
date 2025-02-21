@@ -1,5 +1,6 @@
 <?php
 //MODEL POUR LA CLASS ModelPlayer
+require_once __DIR__ . "/../interface/interfaceModel.php";
 
 
 class ModelPlayer implements InterfaceModel {
@@ -7,7 +8,7 @@ class ModelPlayer implements InterfaceModel {
 
     public function __construct() {
         try {
-            $this->bdd = new PDO("mysql:host=localhost;dbname=supergame", "root", ""); 
+            $this->bdd = new PDO("mysql:host=localhost;dbname=supergame; port=3306", "root", "root"); 
             $this->bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             die("Erreur de connexion : " . $e->getMessage());
