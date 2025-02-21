@@ -3,7 +3,7 @@
 
 
 class ModelPlayer implements InterfaceModel {
-    private PDO $bdd;
+    public PDO $bdd;
 
     public function __construct() {
         try {

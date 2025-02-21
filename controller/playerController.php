@@ -1,11 +1,15 @@
 <?php
 //LE CONTROLLER pour la class PlayerController
-include "../abstract/abstractController.php"; 
-include "../view/viewPlayer.php";
-include "../model/playerModel.php";
+
+//__DIR__ me permet de récupérer le chemin absolu du fichier pour éviter une erreur de chargement malgré le bon chemin indiqué...(error: Failed to open stream: No such file or directory)
+
+require_once __DIR__ . "/../abstract/abstractController.php";
+require_once __DIR__ . "/../view/viewPlayer.php";
+require_once __DIR__ . "/../model/playerModel.php";
+
 
 class PlayerController extends AbstractController {
-    private ViewPlayer $playerView;
+    public ViewPlayer $playerView;
 
     public function __construct() {
         $model = new ModelPlayer();

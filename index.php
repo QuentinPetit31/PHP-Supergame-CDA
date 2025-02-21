@@ -1,6 +1,6 @@
 <?php
 //FICHIER D'EXECUTION
-include "controller/playerController.php"; 
+require_once "controller/playerController.php"; 
 
 $controller = new PlayerController();
 $controller->render();

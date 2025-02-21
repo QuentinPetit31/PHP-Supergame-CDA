@@ -3,8 +3,8 @@
 
 
 class ViewPlayer {
-    private string $signUpMessage = "";
-    private string $playersList = "";
+    public string $signUpMessage = "";
+    public string $playersList = "";
 
     // Ajout de la méthode setSignUpMessage()
     public function setSignUpMessage(string $message) {
