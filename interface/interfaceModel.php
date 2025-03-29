@@ -1,10 +1,10 @@
 <?php
-//LE FICHIER POUR L'INTERFACE InterfaceModel
-
+// Interface que tous les modèles doivent suivre
 interface InterfaceModel {
-    public function add(array $data): string;
-    public function getAll(): ?array;
-    public function getByEmail(string $email): ?array;
-}
+    
+    // Ajoute un élément dans la bdd
+    public function add(): string;
 
-?>
+    // Récupère tous les éléments de la bdds
+    public function getAll(): array | null;
+}

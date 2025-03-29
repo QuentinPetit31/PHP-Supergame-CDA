@@ -1,38 +1,51 @@
 <?php
-//LA VIEW POUR LA CLASS ViewPlayer
-
-
+// Gère l'affichage de la page joueur (formulaire + liste)
 class ViewPlayer {
-    public string $signUpMessage = "";
-    public string $playersList = "";
 
-    // Ajout de la méthode setSignUpMessage()
-    public function setSignUpMessage(string $message) {
+    // Message d'inscription + liste des joueurs
+    private ?string $signUpMessage = '';
+    private ?string $playersList = '';
+
+    // Getters et setters
+    public function getSignUpMessage(): ?string {
+        return $this->signUpMessage;
+    }
+
+    public function setSignUpMessage(?string $message): ViewPlayer {
         $this->signUpMessage = $message;
+        return $this;
     }
 
-    // Ajout de la méthode setPlayersList()
-    public function setPlayersList(string $playersList) {
+    public function getPlayersList(): ?string {
+        return $this->playersList;
+    }
+
+    public function setPlayersList(?string $playersList): ViewPlayer {
         $this->playersList = $playersList;
+        return $this;
     }
 
+    // Affiche le formulaire d'inscription et la liste des joueurs
     public function displayView(): string {
-        return "
-            <h1>Accueil</h1>
-            <h2>Inscription d'un Joueur</h2>
-            <form method='post' action='index.php'>
-                <input type='text' name='pseudo' placeholder='Votre Pseudo' required>
-                <input type='email' name='email' placeholder='Votre Email' required>
-                <input type='password' name='psswrd' placeholder='Votre Mot de Passe' required>
-                <input type='number' name='score' placeholder='Votre Score' required>
-                <button type='submit'>Envoyer</button>
-            </form>
-            <p>{$this->signUpMessage}</p>
-            <h2>Liste des joueurs</h2>
-            {$this->playersList}
-        ";
+        ob_start();
+?>
+        <h1>Inscription d'un Joueur</h1>
+<form action="" method="post">
+    <input type="text" name="pseudo" placeholder="Votre Pseudo">
+    <input type="text" name="email" placeholder="Votre Email">
+    <input type="text" name="password" placeholder="Votre Mot de Passe">
+    <input type="number" name="score" placeholder="Votre Score">
+    <input type="submit" name="submit" value="Envoyer">
+</form>
+
+<p><?php echo $this->getSignUpMessage() ?></p>
+
+<h2>Liste des Joueurs</h2>
+<section>
+    <?php echo $this->getPlayersList() ?>
+</section>
+
+<?php
+        return ob_get_clean();
     }
 }
-
-?>
-
